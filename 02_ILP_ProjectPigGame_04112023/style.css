@@ -36,6 +36,22 @@ main {
   display: flex;
 }
 
+.playerwins{
+  border: 7px;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: yellow;
+  border-radius: 100px;
+  border-top: 2px ;
+  border-right: 3px;
+  border-left: 3px;
+  border-bottom: 3px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+
 .player {
   flex: 50%;
   padding: 9rem;
@@ -165,3 +181,5 @@ main {
   font-weight: 700;
   color: #c7365f;
 }
+
+
