@@ -20,7 +20,3 @@ const currentVal = rollDice();
 console.log("Final current value = " + currentVal);
 
 
-
-// const changeBg=()=>{
-//     document.body.style.backgroundColor="red";
-// }
