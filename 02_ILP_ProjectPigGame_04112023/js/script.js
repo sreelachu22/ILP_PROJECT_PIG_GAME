@@ -39,7 +39,7 @@ content.classList.add('playerwins', '');
 container1.appendChild(content);
 
 //nathaniel
-const switchPlayer = function () {
+function switchPlayer() {
   const player1 = document.getElementsByClassName('player player--0')[0];
   const player2 = document.getElementsByClassName('player player--1')[0];
 
@@ -48,7 +48,7 @@ const switchPlayer = function () {
 
   player1.classList.toggle('player--active');
   player2.classList.toggle('player--active');
-};
+}
 
 //sreelakshmi
 function hold() {
