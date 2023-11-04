@@ -52,7 +52,7 @@ const switchPlayer = function () {
   document.getElementById('current--1').textContent = 0;
 
   player1.classList.toggle('player--active');
-  player2.classList.toggle('player--active');
+  player2.classList.toggle('player--active'); //comment
 };
 
 //sreelakshmi
