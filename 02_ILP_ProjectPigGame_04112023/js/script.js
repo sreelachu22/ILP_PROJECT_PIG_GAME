@@ -1,5 +1,12 @@
+//avinash
+function reset() {
+  document.getElementById('current--0').textContent = 0;
+  document.getElementById('current--1').textContent = 0;
+  document.getElementById('score--0').textContent = 0;
+  document.getElementById('score--1').textContent = 0;
+}
 
-
+//ashiq
 let current = 0;
 
 function rollDice() {
@@ -22,7 +29,7 @@ const currentVal = rollDice();
 console.log("Final current value = " + currentVal);
 
 
-
+//mehanoor
 let current1 = document.getElementsById('current--0');
 let current2 = document.getElementsById('current--1');
 let container1 = document.getElementsByClassName('player player--0');
@@ -34,6 +41,7 @@ content.classList.add('playerwins' ,'');
 container1.appendChild(content);
 
 
+//nathaniel
 const switchPlayer = function () {
   const player1 = document.getElementsByClassName('player player--0')[0];
   const player2 = document.getElementsByClassName('player player--1')[0];
@@ -47,7 +55,7 @@ const switchPlayer = function () {
   player2.classList.toggle('player--active');
 };
 
-
+//sreelakshmi
 function hold(){
     let current0 = document.querySelector('current--0');
     let current1 = document.querySelector('current--1');
