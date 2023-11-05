@@ -14,6 +14,10 @@ function getActivePlayer() {
 
 //new game button function
 function reset() {
+  const popup = document.getElementById('popup');
+  if (popup) {
+    popup.remove();
+  }
   document.getElementById('current--0').textContent = 0;
   document.getElementById('current--1').textContent = 0;
   document.getElementById('score--0').textContent = 0;
@@ -61,16 +65,6 @@ function rollDice() {
   return current;
 }
 
-//winner
-// let current1 = document.getElementsById('current--0');
-// let current2 = document.getElementsById('current--1');
-// let container1 = document.getElementsByClassName('player player--0');
-// let container2 = document.getElementsByClassName('player player--1');
-
-// var content = document.createElement('h3');
-// content.classList.add('playerwins', '');
-// container1.appendChild(content);
-
 //switch between players
 function switchPlayer() {
   const player1 = document.getElementsByClassName('player player--0')[0];
@@ -91,21 +85,36 @@ function hold() {
   document.getElementById('score--0').textContent = score0 + current0;
   document.getElementById('score--1').textContent = score1 + current1;
 
-  if (score0 + current0 >= 20) {
-    document.getElementById('congratulations--0').style.display = 'block';
-    reset();
-  }
-
-  if (score1 + current1 >= 20) {
-    document.getElementById('congratulations--1').style.display = 'block';
-    reset();
-  }
-
   document.getElementById('current--0').textContent = 0;
   document.getElementById('current--1').textContent = 0;
 
+  if (score0 + current0 >= 50) {
+    congratulatePlayer(0);
+  } else if (score1 + current1 >= 50) {
+    congratulatePlayer(1);
+  }
   switchPlayer();
 
   current = 0;
   currentVal = 0;
+}
+
+//winner displaying
+function congratulatePlayer(activePlayer) {
+  const congratsMessage = `Congratulations, Player${activePlayer + 1}!`;
+  const popup = document.createElement('div');
+  popup.id = 'popup';
+  popup.className = 'popup';
+  popup.textContent = congratsMessage;
+  popup.style.top = '50%';
+  popup.style.backgroundColor = 'rgba(255, 255, 255, 0.568)';
+  popup.style.position = 'absolute';
+  popup.style.padding = '20px';
+  popup.style.fontSize = '60px';
+  popup.style.border = '3px solid #c7365f';
+  popup.style.borderRadius = '100px';
+  popup.style.textAlign = 'center';
+  popup.style.zIndex = '99';
+  popup.style.animation = 'sparkle 0.8s infinite';
+  document.body.appendChild(popup);
 }
