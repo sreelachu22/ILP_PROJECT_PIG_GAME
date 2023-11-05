@@ -76,9 +76,9 @@ function hold() {
     document.getElementById('current--0').textContent = 0;
     document.getElementById('current--1').textContent = 0;
 
-    if(score0 + current0 >=10){
+    if(score0 + current0 >=50){
         congratulatePlayer(0)
-    } else if(score1 + current1 >=10){
+    } else if(score1 + current1 >=50){
         congratulatePlayer(1)
     }
     switchPlayer();
