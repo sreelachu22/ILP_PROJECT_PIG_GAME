@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 //get active player number
 function getActivePlayer() {
     const player0 = document.getElementsByClassName('player player--0')[0];
@@ -25,6 +27,7 @@ function reset()
 }
 
 //rollDice function
+>>>>>>> fa26096204c7ca537383dba4ae094977cab382f2
 let current = 0;
 
 function rollDice() {
@@ -38,7 +41,6 @@ function rollDice() {
     } else {
         current = 0;
         document.getElementById(`current--${playerNumber}`).textContent = current;
-        document.getElementById(`score--${playerNumber}`).textContent = 0;
         switchPlayer();
     }
     console.log("random = " + random);
@@ -77,6 +79,43 @@ function hold() {
     let score1 = parseFloat(document.querySelector('#score--1').textContent);
     document.getElementById('score--0').textContent = score0 + current0;
     document.getElementById('score--1').textContent = score1 + current1;
-   
+
+    document.getElementById('current--0').textContent = 0;
+    document.getElementById('current--1').textContent = 0;
+
     switchPlayer();
+<<<<<<< HEAD
+
+    current=0;
+    currentVal=0;
   }
+
+function reset()
+{
+    document.getElementById('current--0').textContent=0;
+    document.getElementById('current--1').textContent=0;
+    document.getElementById('score--0').textContent=0;
+    document.getElementById('score--1').textContent=0;
+    const diceImage = document.querySelector(".dice");
+    const imageName = ``;
+    diceImage.src = imageName;
+
+    current=0;
+    currentVal=0;
+}
+
+function getActivePlayer() {
+    const player0 = document.getElementsByClassName('player player--0')[0];
+    const player1 = document.getElementsByClassName('player player--1')[0];
+ 
+    if (player0.classList.contains('player--active')) {
+        return 0;
+    } else if (player1.classList.contains('player--active')) {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+=======
+  }
+>>>>>>> fa26096204c7ca537383dba4ae094977cab382f2
