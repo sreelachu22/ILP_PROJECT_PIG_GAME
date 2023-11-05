@@ -1,5 +1,3 @@
-
-
 let current = 0;
 
 function rollDice() {
@@ -13,7 +11,6 @@ function rollDice() {
     } else {
         current = 0;
         document.getElementById(`current--${playerNumber}`).textContent = current;
-        document.getElementById(`score--${playerNumber}`).textContent = 0;
         switchPlayer();
     }
     console.log("random = " + random);
@@ -62,8 +59,14 @@ function hold() {
    
     document.getElementById('score--0').textContent = score0 + current0;
     document.getElementById('score--1').textContent = score1 + current1;
-   
+
+    document.getElementById('current--0').textContent = 0;
+    document.getElementById('current--1').textContent = 0;
+
     switchPlayer();
+
+    current=0;
+    currentVal=0;
   }
 
 function reset()
@@ -71,10 +74,13 @@ function reset()
     document.getElementById('current--0').textContent=0;
     document.getElementById('current--1').textContent=0;
     document.getElementById('score--0').textContent=0;
-    document.getElementById('score--0').textContent=0;
+    document.getElementById('score--1').textContent=0;
     const diceImage = document.querySelector(".dice");
     const imageName = ``;
     diceImage.src = imageName;
+
+    current=0;
+    currentVal=0;
 }
 
 function getActivePlayer() {
