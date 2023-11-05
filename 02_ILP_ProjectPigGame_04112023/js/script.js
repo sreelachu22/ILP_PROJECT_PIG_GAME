@@ -26,17 +26,32 @@ const currentVal = rollDice();
 console.log("Final current value = " + currentVal);
  
  
+
  
 let current1 = document.getElementsById('current--0');
 let current2 = document.getElementsById('current--1');
 let container1 = document.getElementsByClassName('player player--0');
 let container2 = document.getElementsByClassName('player player--1');
+let rollBtn = document.getElementsByClassName('btn--roll');
+
+if (parseInt(current1.textContent) >= 100) {
+    showWinner(1);
+} else if (parseInt(current2.textContent) >= 100) {
+    showWinner(2);
+}
+
+function showWinner(player) {
+    winnerPlayer.textContent = player;
+    winner.style.display = 'block';   //congrts now visible
+    rollBtn.disabled = true;
+}
  
+// var content = document.createElement('h3');
+// content.classList.add('playerwins' ,'');
+// container1.appendChild(content);
  
-var content = document.createElement('h3');
-content.classList.add('playerwins' ,'');
-container1.appendChild(content);
- 
+
+
  
   function  switchPlayer() {
   const player1 = document.getElementsByClassName('player player--0')[0];

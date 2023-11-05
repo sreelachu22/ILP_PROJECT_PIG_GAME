@@ -36,7 +36,9 @@ main {
   display: flex;
 }
 
-.playerwins{
+
+
+/* .playerwins{
   border: 7px;
   color: black;
   font-size: 30px;
@@ -49,7 +51,25 @@ main {
   border-bottom: 3px;
   padding: 30px;
   margin-bottom: 40px;
+} */
+
+#winner {
+  text-align: center;
 }
+
+#winner h3 {
+  color: #4caf50;
+}
+
+#winner p {
+  font-size: 24px;
+  font-weight: bold;
+}
+.hidden {
+  display: none;   
+}
+
+
 
 
 .player {
