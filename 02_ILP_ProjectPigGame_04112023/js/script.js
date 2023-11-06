@@ -1,3 +1,5 @@
+let hasPlayerWon = false;
+
 //get active player number
 function getActivePlayer() {
     const player0 = document.getElementsByClassName('player player--0')[0];
@@ -18,6 +20,7 @@ function reset()
     const popup = document.getElementById('popup');
     if (popup) {
         popup.remove();
+        hasPlayerWon = false;
     }
     document.getElementById('current--0').textContent=0;
     document.getElementById('current--1').textContent=0;
@@ -34,6 +37,9 @@ function reset()
 let current = 0;
 
 function rollDice() {
+    if(hasPlayerWon){
+        return;
+    }
     const playerNumber = getActivePlayer();
     const random = Math.floor(Math.random() * 6) + 1;
     const diceImage = document.querySelector(".dice");
@@ -66,6 +72,9 @@ function rollDice() {
 
 //hold function
 function hold() {
+    if(hasPlayerWon){
+        return;
+    }
     let current0 = parseFloat(document.querySelector('#current--0').textContent);
     let current1 = parseFloat(document.querySelector('#current--1').textContent);
     let score0 = parseFloat(document.querySelector('#score--0').textContent);
@@ -106,4 +115,5 @@ function congratulatePlayer(activePlayer) {
     popup.style.zIndex = '99';
     popup.style.animation = 'sparkle 0.8s infinite';
     document.body.appendChild(popup);
+    hasPlayerWon = true;
 }
