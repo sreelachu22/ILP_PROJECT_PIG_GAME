@@ -31,9 +31,6 @@ function reset() {
 
   current = 0;
   currentVal = 0;
-
-  document.getElementById('congratulations--0').style.display = 'none';
-  document.getElementById('congratulations--1').style.display = 'none';
 }
 
 let current = 0;
@@ -57,23 +54,8 @@ function rollDice() {
   console.log('random = ' + random);
   console.log('current = ' + current);
   document.getElementById(`current--${playerNumber}`).textContent = current;
-  switchPlayer();
+  return current;
 }
-console.log('random = ' + random);
-console.log('current = ' + current);
-document.getElementById(`current--${playerNumber}`).textContent = current;
-
-const score = parseFloat(
-  document.getElementById(`score--${playerNumber}`).textContent
-);
-
-//   if (score + current >= 20) {
-//     scoreElement.textContent = score + current;
-//     document.getElementById(`congratulations--${playerNumber}`).style.display =
-//       'block';
-//     current = 0;
-//   }
-return current;
 
 //switch between players
 function switchPlayer() {
