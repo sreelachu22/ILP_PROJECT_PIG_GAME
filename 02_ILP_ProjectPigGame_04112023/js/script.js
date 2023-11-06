@@ -1,3 +1,5 @@
+let hasPlayerWon = false;
+
 //get active player number
 function getActivePlayer() {
   const player0 = document.getElementsByClassName('player player--0')[0];
@@ -17,6 +19,7 @@ function reset() {
   const popup = document.getElementById('popup');
   if (popup) {
     popup.remove();
+    hasPlayerWon = false;
   }
   document.getElementById('current--0').textContent = 0;
   document.getElementById('current--1').textContent = 0;
@@ -36,6 +39,9 @@ function reset() {
 let current = 0;
 
 function rollDice() {
+  if (hasPlayerWon) {
+    return;
+  }
   const playerNumber = getActivePlayer();
   const random = Math.floor(Math.random() * 6) + 1;
   const diceImage = document.querySelector('.dice');
@@ -51,19 +57,23 @@ function rollDice() {
   console.log('random = ' + random);
   console.log('current = ' + current);
   document.getElementById(`current--${playerNumber}`).textContent = current;
-
-  const score = parseFloat(
-    document.getElementById(`score--${playerNumber}`).textContent
-  );
-
-  //   if (score + current >= 20) {
-  //     scoreElement.textContent = score + current;
-  //     document.getElementById(`congratulations--${playerNumber}`).style.display =
-  //       'block';
-  //     current = 0;
-  //   }
-  return current;
+  switchPlayer();
 }
+console.log('random = ' + random);
+console.log('current = ' + current);
+document.getElementById(`current--${playerNumber}`).textContent = current;
+
+const score = parseFloat(
+  document.getElementById(`score--${playerNumber}`).textContent
+);
+
+//   if (score + current >= 20) {
+//     scoreElement.textContent = score + current;
+//     document.getElementById(`congratulations--${playerNumber}`).style.display =
+//       'block';
+//     current = 0;
+//   }
+return current;
 
 //switch between players
 function switchPlayer() {
@@ -78,6 +88,9 @@ function switchPlayer() {
 
 //hold function
 function hold() {
+  if (hasPlayerWon) {
+    return;
+  }
   let current0 = parseFloat(document.querySelector('#current--0').textContent);
   let current1 = parseFloat(document.querySelector('#current--1').textContent);
   let score0 = parseFloat(document.querySelector('#score--0').textContent);
@@ -106,15 +119,16 @@ function congratulatePlayer(activePlayer) {
   popup.id = 'popup';
   popup.className = 'popup';
   popup.textContent = congratsMessage;
-  popup.style.top = '50%';
+  popup.style.top = '47%';
   popup.style.backgroundColor = 'rgba(255, 255, 255, 0.568)';
   popup.style.position = 'absolute';
-  popup.style.padding = '20px';
-  popup.style.fontSize = '60px';
+  popup.style.padding = '15px';
+  popup.style.fontSize = '40px';
   popup.style.border = '3px solid #c7365f';
   popup.style.borderRadius = '100px';
   popup.style.textAlign = 'center';
   popup.style.zIndex = '99';
   popup.style.animation = 'sparkle 0.8s infinite';
   document.body.appendChild(popup);
+  hasPlayerWon = true;
 }
