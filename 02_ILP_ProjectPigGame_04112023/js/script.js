@@ -56,12 +56,12 @@ function rollDice() {
     document.getElementById(`score--${playerNumber}`).textContent
   );
 
-  if (score + current >= 20) {
-    scoreElement.textContent = score + current;
-    document.getElementById(`congratulations--${playerNumber}`).style.display =
-      'block';
-    current = 0;
-  }
+  //   if (score + current >= 20) {
+  //     scoreElement.textContent = score + current;
+  //     document.getElementById(`congratulations--${playerNumber}`).style.display =
+  //       'block';
+  //     current = 0;
+  //   }
   return current;
 }
 
