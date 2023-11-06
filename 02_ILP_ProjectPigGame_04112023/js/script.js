@@ -95,11 +95,11 @@ function congratulatePlayer(activePlayer) {
     popup.id = 'popup';
     popup.className = 'popup';
     popup.textContent = congratsMessage;
-    popup.style.top = '50%';
+    popup.style.top = '47%';
     popup.style.backgroundColor = 'rgba(255, 255, 255, 0.568)';
     popup.style.position = 'absolute';
-    popup.style.padding = '20px';
-    popup.style.fontSize = '60px';
+    popup.style.padding = '15px';
+    popup.style.fontSize = '40px';
     popup.style.border = '3px solid #c7365f';
     popup.style.borderRadius = '100px'
     popup.style.textAlign = 'center';
