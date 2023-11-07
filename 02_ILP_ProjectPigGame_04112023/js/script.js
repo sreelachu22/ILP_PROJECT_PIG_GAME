@@ -1,3 +1,9 @@
+let player1=prompt("Enter the name of player 1");
+let player2=prompt("Enter the name of player 2");
+
+console.log(player1);
+console.log(player2);
+
 let hasPlayerWon = false;
 
 //get active player number
@@ -32,6 +38,9 @@ function reset()
 
     current=0;
     currentVal=0;
+
+    let player1=prompt("Enter the name of player 1");
+    let player2=prompt("Enter the name of player 2");
 }
 
 let current = 0;
@@ -99,21 +108,44 @@ function hold() {
 
 //winner displaying
 function congratulatePlayer(activePlayer) {
-    const congratsMessage = `Congratulations, Player${activePlayer + 1}!`;
-    const popup = document.createElement('div');
-    popup.id = 'popup';
-    popup.className = 'popup';
-    popup.textContent = congratsMessage;
-    popup.style.top = '47%';
-    popup.style.backgroundColor = 'rgba(255, 255, 255, 0.568)';
-    popup.style.position = 'absolute';
-    popup.style.padding = '15px';
-    popup.style.fontSize = '40px';
-    popup.style.border = '3px solid #c7365f';
-    popup.style.borderRadius = '100px'
-    popup.style.textAlign = 'center';
-    popup.style.zIndex = '99';
-    popup.style.animation = 'sparkle 0.8s infinite';
-    document.body.appendChild(popup);
-    hasPlayerWon = true;
+    if(activePlayer==0)
+    {
+        const congratsMessage = `Congratulations, ${player1}!`;
+        const popup = document.createElement('div');
+        popup.id = 'popup';
+        popup.className = 'popup';
+        popup.textContent = congratsMessage;
+        popup.style.top = '47%';
+        popup.style.backgroundColor = 'rgba(255, 255, 255, 0.568)';
+        popup.style.position = 'absolute';
+        popup.style.padding = '15px';
+        popup.style.fontSize = '40px';
+        popup.style.border = '3px solid #c7365f';
+        popup.style.borderRadius = '100px'
+        popup.style.textAlign = 'center';
+        popup.style.zIndex = '99';
+        popup.style.animation = 'sparkle 0.8s infinite';
+        document.body.appendChild(popup);
+        hasPlayerWon = true;
+    }
+    else if(activePlayer==1)
+    {
+        const congratsMessage = `Congratulations, ${player2}!`;
+        const popup = document.createElement('div');
+        popup.id = 'popup';
+        popup.className = 'popup';
+        popup.textContent = congratsMessage;
+        popup.style.top = '47%';
+        popup.style.backgroundColor = 'rgba(255, 255, 255, 0.568)';
+        popup.style.position = 'absolute';
+        popup.style.padding = '15px';
+        popup.style.fontSize = '40px';
+        popup.style.border = '3px solid #c7365f';
+        popup.style.borderRadius = '100px'
+        popup.style.textAlign = 'center';
+        popup.style.zIndex = '99';
+        popup.style.animation = 'sparkle 0.8s infinite';
+        document.body.appendChild(popup);
+        hasPlayerWon = true;
+    }
 }
