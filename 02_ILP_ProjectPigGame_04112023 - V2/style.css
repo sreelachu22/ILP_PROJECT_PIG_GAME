@@ -164,6 +164,15 @@ main {
   outline: none;
 }
 
+/* @keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
 .dice {
   position: absolute;
   left: 50%;
@@ -171,6 +180,8 @@ main {
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  /* animation-name: roll;
+  animation-duration: 2s; */
 }
 
 .player--winner {
@@ -197,49 +208,25 @@ main {
   }
 }
 
-@keyframes fireworks {
+/* @keyframes roll {
   0% {
-      background-position: 0 0;
+    transform: rotate(0deg);
   }
   100% {
-      background-position: -500px -500px;
+    transform: rotate(360deg);
   }
-}
+} */
 
-
-@keyframes fireworks {
+@keyframes dice-roll {
   0% {
-      opacity: 1;
-      transform: scale(0);
-  }
-  50% {
-      opacity: 1;
-      transform: scale(1);
-  }
-  100% {
-      opacity: 0;
-      transform: scale(1.5);
-  }
+    transform: rotate(0deg);
 }
-
-.balloon {
-  position: absolute;
-  width: 20px;
-  height: 30px;
-  background: #ff6384; /* Balloon color */
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Oval shape */
-  pointer-events: none;
-  opacity: 0;
-  animation: balloonAnimation 10s linear infinite;
-}
-
-@keyframes balloonAnimation {
-  0% {
-      opacity: 0;
-      transform: translateY(100vh);
-  }
   100% {
-      opacity: 1;
-      transform: translateY(-150vh);
-  }
+    transform: rotate(360deg);
+}
+}
+ 
+.dice-roll {
+
+animation: dice-roll 1s;
 }

@@ -1,5 +1,5 @@
-let player1=prompt("Enter the name of player 1");
-let player2=prompt("Enter the name of player 2");
+let player1;
+let player2;
 
 console.log(player1);
 console.log(player2);
@@ -39,8 +39,8 @@ function reset()
     current=0;
     currentVal=0;
 
-    let player1=prompt("Enter the name of player 1");
-    let player2=prompt("Enter the name of player 2");
+    player1=prompt("Enter the name of player 1");
+    player2=prompt("Enter the name of player 2");
 }
 
 let current = 0;
@@ -50,10 +50,12 @@ function rollDice() {
         return;
     }
     const playerNumber = getActivePlayer();
-    const random = Math.floor(Math.random() * 6) + 1;
-    const diceImage = document.querySelector(".dice");
-    const imageName = `dice-${random}.png`;
-    diceImage.src = imageName;
+const random = Math.floor(Math.random() * 6) + 1;
+const diceImage = document.querySelector('.dice');
+const imageName = `dice-${random}.png`;
+diceImage.src = imageName;
+diceImage.classList.add('dice-roll');
+    
     if (random !== 1) {
         current = current + random;
     } else {
@@ -94,9 +96,9 @@ function hold() {
     document.getElementById('current--0').textContent = 0;
     document.getElementById('current--1').textContent = 0;
 
-    if(score0 + current0 >=50){
+    if(score0 + current0 >=20){
         congratulatePlayer(0)
-    } else if(score1 + current1 >=50){
+    } else if(score1 + current1 >=20){
         congratulatePlayer(1)
     }
     switchPlayer();

@@ -42,7 +42,7 @@ function reset()
     let player1=prompt("Enter the name of player 1");
     let player2=prompt("Enter the name of player 2");
 }
-
+//rollDice
 let current = 0;
 
 function rollDice() {
